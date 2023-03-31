@@ -4,6 +4,29 @@
     <app-menu></app-menu>
 
     <!--* MAIN CONTENT-->
-    <main class="main"></main>
-    
+    <main class="main">
+
+        <div class="main__container">
+
+            <!--* Text block -->
+            <div class="main__text">
+                <h5 class="main__h5">So, you want travel to</h5>
+                <h1 class="main__h1">Space</h1>
+                <p class="main__p">
+                    Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not
+                    hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this
+                    world experience!
+                </p>
+            </div>
+
+            <!--* Button block -->
+            <div class="main__circles">
+                <div class="main__circle main__circle--large" [ngClass]="{'main__circle--hover':hover}"></div>
+                <a routerLink="/home" class="main__circle main__circle--small" (mouseenter)="toogleHover()"
+                    (mouseleave)="toogleHover()">Explore</a>
+            </div>
+        </div>
+
+    </main>
+
 </div>
