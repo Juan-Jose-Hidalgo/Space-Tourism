@@ -147,6 +147,21 @@ h5 {
     font-family: map-get($map: var.$fonts-map, $key: "primary");
 }
 
+p {
+    font-size: .9375rem;
+    line-height: 1.5625rem;
+
+    @media (min-width: 768px) {
+        font-size: 1rem;
+        line-height: 1.75rem;
+    }
+
+    @media (min-width:1440px) {
+        font-size: 1.125rem;
+        line-height: 2rem;
+    }
+}
+
 h1,
 h2,
 h3,
@@ -155,7 +170,18 @@ h4 {
 }
 
 h1 {
-    font-size: 9.375rem;
+    font-size: 5rem;
+    line-height: 6.25rem;
+
+    @media (min-width: 768px) {
+        font-size: 9.375rem;
+        line-height: 9.375rem;
+    }
+
+    @media (min-width:1440px) {
+        font-size: 9.375rem;
+        line-height: 10.75rem;
+    }
 }
 
 h2 {
@@ -171,6 +197,19 @@ h4 {
 }
 
 h5 {
-    font-size: 1.75rem;
-    letter-spacing: 4.75;
+    font-size: 1rem;
+    line-height: 1.1875rem;
+    letter-spacing: 2.7px;
+
+    @media (min-width: 768px) {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        letter-spacing: 3.375px;
+    }
+
+    @media (min-width:1440px) {
+        font-size: 1.75rem;
+        line-height: 2.125rem;
+        letter-spacing: 4.75;
+    }
 }
