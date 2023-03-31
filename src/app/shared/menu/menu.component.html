@@ -1,0 +1,28 @@
+<header class="header">
+
+    <!--* Logo -->
+    <a routerLink="/home" class="header__logo">
+        <img src="/assets/img/shared/logo.svg" alt="Logo" width="48" height="48" class="header__svg">
+    </a>
+
+    <!--* Strip -->
+    <div class="header__strip"></div>
+
+    <!--* Menuicon -->
+    <button class="header__btn">
+        <img [src]="menuActive ? '/assets/img/shared/icon-close.svg' : '/assets/img/shared/icon-hamburger.svg'"
+            alt="Menu icon" class="header__menuicon" width="24" height="21" (click)="toogleMenu()">
+    </button>
+
+    <!--* Menu -->
+    <nav class="header__nav" [ngClass]="{'header__nav--active' : menuActive}">
+        <ul class="header__ul">
+            <li class="header__li" *ngFor="let item of menu">
+                <a [routerLink]="item.url" routerLinkActive="header__a--active" class="header__a">
+                    <span class="header__span">{{item.span}} </span> {{item.title}}
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</header>

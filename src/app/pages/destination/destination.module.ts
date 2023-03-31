@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { DestinationRoutingModule } from './destination-routing.module';
 
+import { SharedModule } from 'src/app/shared/shared.module';
+
 import { DestinationComponent } from './destination.component';
 
 
@@ -15,7 +17,8 @@ import { DestinationComponent } from './destination.component';
   ],
   imports: [
     CommonModule,
-    DestinationRoutingModule
+    DestinationRoutingModule,
+    SharedModule
   ]
 })
 export class DestinationModule { }

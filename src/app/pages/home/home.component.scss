@@ -1,0 +1,20 @@
+@use 'mixins' as mix;
+@use 'variables' as var;
+
+.home {
+    @include mix.flex-box(column, nowrap, space-between);
+    align-items:normal;
+    min-height: 100vh;
+    background-image: url('/assets/img/home/background-home-mobile.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+        background-image: url('/assets/img/home/background-home-tablet.jpg');
+    }
+
+    @media (min-width: 1440px){
+        background-image: url('/assets/img/home/background-home-desktop.jpg');
+    }
+}
