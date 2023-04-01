@@ -1,0 +1,28 @@
+@use 'mixins' as mix;
+@use 'variables' as var;
+
+.destination {
+    @include mix.flex-box(column, nowrap, flex-end, center);
+    min-height: 100vh;
+    background-image: url('/assets/img/destination/background-destination-mobile.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+        background-image: url('/assets/img/destination/background-destination-tablet.jpg');
+    }
+
+    @media (min-width: 1440px) {
+        background-image: url('/assets/img/destination/background-destination-desktop.jpg');
+    }
+}
+
+.destination__container {
+    @include mix.flex-box(column, nowrap, space-around, center);
+    width: 90%;
+    min-height: calc(100vh - 6rem);
+    margin: 0 auto;
+    color: map-get($map: var.$colors-map, $key: "primary");
+    padding-top: 1rem;
+}
