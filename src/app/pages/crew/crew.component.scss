@@ -1,0 +1,38 @@
+@use 'mixins' as mix;
+@use 'variables' as var;
+
+.crew {
+    @include mix.flex-box(column, nowrap, space-between, center);
+    min-height: 100vh;
+    background-image: url('/assets/img/crew/background-crew-mobile.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    @media (min-width: 48rem) {
+        background-image: url('/assets/img/crew/background-crew-tablet.jpg');
+    }
+
+    @media (min-width: 90rem) {
+        background-image: url('/assets/img/crew/background-crew-desktop.jpg');
+        justify-content: center;
+    }
+}
+
+.crew__container {
+    @include mix.flex-box(column, nowrap, space-between, center);
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 6rem;
+    color: map-get($map: var.$colors-map, $key: "primary");
+    gap: 2rem;
+
+    @media (min-width:768px) {
+        margin-top: 8.5rem;
+    }
+
+    @media (min-width:1440px) {
+        width: 80%;
+        flex-direction: row;
+    }
+}

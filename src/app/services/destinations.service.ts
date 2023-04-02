@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { filter, Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { destinations } from '../mocks/destinations.mock';
 import { Destination } from '../models/destination.interface';
 
