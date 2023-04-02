@@ -1,0 +1,90 @@
+@use 'variables' as var;
+
+//* Texts
+
+p {
+    font-size: .9375rem;
+    line-height: 1.5625rem;
+
+    @media (min-width: 768px) {
+        font-size: 1rem;
+        line-height: 1.75rem;
+    }
+
+    @media (min-width:1440px) {
+        font-size: 1.125rem;
+        line-height: 2rem;
+    }
+}
+
+h1 {
+    font-size: 5rem;
+    line-height: 6.25rem;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+        font-size: 9.375rem;
+        line-height: 9.375rem;
+    }
+
+    @media (min-width:1440px) {
+        font-size: 9.375rem;
+        line-height: 10.75rem;
+    }
+}
+
+h5 {
+    font-size: 1rem;
+    line-height: 1.1875rem;
+    letter-spacing: 2.7px;
+
+    @media (min-width: 768px) {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        letter-spacing: 3.375px;
+    }
+
+    @media (min-width:1440px) {
+        font-size: 1.75rem;
+        line-height: 2.125rem;
+        letter-spacing: 4.75;
+    }
+}
+
+.heading-2 {
+    color: map-get($map: var.$colors-map, $key: "primary");
+    font-size: 3.5rem;
+    line-height: 4rem;
+    font-weight: 400;
+    text-align: center;
+
+    @media (min-width: 768px) {
+        font-size: 5rem;
+        line-height: 5.75rem;
+    }
+
+    @media (min-width: 1440px) {
+        font-size: 6.25rem;
+        line-height: 7.1875rem;
+    }
+}
+
+.subheading-1 {
+    color: map-get($map: var.$colors-map, $key: "primary");
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    font-size: 1.75rem;
+    line-height: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.subheading-2 {
+    color: map-get($map: var.$colors-map, $key: "accent");
+    font-family: map-get($map: var.$fonts-map, $key: "primary");
+    font-size: .875rem;
+    line-height: 1.0625rem;
+    text-align: center;
+    letter-spacing: 2.3625px;
+    text-transform: uppercase;
+}

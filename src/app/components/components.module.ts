@@ -1,18 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
 import { DestinationsMenuComponent } from './destinations-menu/destinations-menu.component';
+import { SelectedDestinationComponent } from './selected-destination/selected-destination.component';
 
 
 
 @NgModule({
   declarations: [
-    DestinationsMenuComponent
+    DestinationsMenuComponent,
+    SelectedDestinationComponent,
   ],
   exports: [
-    DestinationsMenuComponent
+    DestinationsMenuComponent,
+    SelectedDestinationComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class ComponentsModule { }

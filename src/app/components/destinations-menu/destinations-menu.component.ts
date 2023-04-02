@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Destination } from 'src/app/models/destination.interface';
 
 @Component({
@@ -7,5 +7,10 @@ import { Destination } from 'src/app/models/destination.interface';
   styleUrls: ['./destinations-menu.component.scss']
 })
 export class DestinationsMenuComponent {
-  @Input() destinations: Destination[] = []
+  @Input() destinations: Destination[] = [];
+  @Output() destination = new EventEmitter<string>();
+
+  sendDestination(destination: string) {
+    this.destination.emit(destination);
+  }
 }

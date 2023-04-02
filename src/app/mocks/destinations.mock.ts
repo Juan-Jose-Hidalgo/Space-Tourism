@@ -9,7 +9,7 @@ export const destinations: Destination[] = [
             png: '/assets/img/destination/image-moon.png',
             webp: '/assets/img/destination/image-moon.webp'
         },
-        name: 'Moon',
+        name: 'moon',
         travelTime: '3 Days'
     },
     {
@@ -20,7 +20,7 @@ export const destinations: Destination[] = [
             png: '/assets/img/destination/image-mars.png',
             webp: '/assets/img/destination/image-mars.webp'
         },
-        name: 'Mars',
+        name: 'mars',
         travelTime: '9 months'
     },
     {
@@ -31,7 +31,7 @@ export const destinations: Destination[] = [
             png: '/assets/img/destination/image-europa.png',
             webp: '/assets/img/destination/image-europa.webp'
         },
-        name: 'Europa',
+        name: 'europa',
         travelTime: '3 years'
     },
     {
@@ -42,7 +42,7 @@ export const destinations: Destination[] = [
             png: '/assets/img/destination/image-titan.png',
             webp: '/assets/img/destination/image-titan.webp'
         },
-        name: 'Titan',
+        name: 'titan',
         travelTime: '7 years'
     }
 ]

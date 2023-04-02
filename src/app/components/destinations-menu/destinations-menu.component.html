@@ -1,5 +1,8 @@
-<nav>
-    <li *ngFor="let destination of destinations">
-        {{destination.name}}
-    </li>
+<nav class="destination-nav">
+    <ul class="destination-nav__ul">
+        <li class="destination-nav__li" *ngFor="let destination of destinations">
+            <a [routerLink]="['/destination', destination.name]" routerLinkActive="destination-nav__a--active"
+                class="destination-nav__a" (click)="sendDestination(destination.name)">{{destination.name}}</a>
+        </li>
+    </ul>
 </nav>

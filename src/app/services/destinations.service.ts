@@ -25,9 +25,6 @@ export class DestinationsService {
       const result = destinations.filter(destination => destination.name === name);
       this.destination = result[0];
       observer.next(this.destination);
-
-      if (result.length != 0) observer.error('Destination not exists not found');
-      else observer.complete();
     })
   }
 }

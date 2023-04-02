@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: '',
     children: [
-      { path: '', component: DestinationComponent, title: 'Destination' }
+      { path: ':name', component: DestinationComponent },
     ]
   }
 ];
