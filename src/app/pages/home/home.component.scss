@@ -2,6 +2,7 @@
 @use 'variables' as var;
 
 .home {
+    @include mix.flex-box(column, nowrap, flex-end  , center);
     align-items: normal;
     min-height: 100vh;
     background-image: url('/assets/img/home/background-home-mobile.jpg');
@@ -18,7 +19,7 @@
     }
 }
 
-.main__container {
+.home__container {
     @include mix.flex-box(column, nowrap, space-around, center);
     width: 90%;
     min-height: calc(100vh - 6rem);
@@ -41,7 +42,7 @@
     }
 }
 
-.main__text {
+.home__text {
     @include mix.flex-box(column, nowrap, space-between, center);
     gap: 1rem;
     text-align: center;
@@ -53,19 +54,19 @@
     }
 }
 
-.main__h5,
-.main__h1 {
+.home__h5,
+.home__h1 {
     text-transform: uppercase;
     font-weight: 400;
 }
 
-.main__circles {
+.home__circles {
     position: relative;
     width: 18.75rem;
     height: 18.75rem;
 }
 
-.main__circle {
+.home__circle {
     border-radius: 50%;
     position: absolute;
 
@@ -80,7 +81,7 @@
     }
 }
 
-.main__circle--large {
+.home__circle--large {
     background-color: map-get($map: var.$colors-map, $key: "primary");
     opacity: 0;
     width: 17rem;
@@ -101,11 +102,11 @@
     }
 }
 
-.main__circle--hover {
+.home__circle--hover {
     opacity: 0.1;
 }
 
-.main__circle--small {
+.home__circle--small {
     @include mix.flex-box(column, nowrap, center, center);
     background-color: map-get($map: var.$colors-map, $key: "primary");
     color: map-get($map: var.$colors-map, $key: "secondary");

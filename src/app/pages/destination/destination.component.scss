@@ -1,0 +1,88 @@
+@use 'mixins' as mix;
+@use 'variables' as var;
+
+.destination {
+    @include mix.flex-box(column, nowrap, space-between, center);
+    min-height: 100vh;
+    background-image: url('/assets/img/destination/background-destination-mobile.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    @media (min-width: 48rem) {
+        background-image: url('/assets/img/destination/background-destination-tablet.jpg');
+    }
+
+    @media (min-width: 90rem) {
+        background-image: url('/assets/img/destination/background-destination-desktop.jpg');
+        justify-content: center;
+    }
+}
+
+.destination__container {
+    @include mix.flex-box(column, nowrap, space-between, center);
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 6rem;
+    color: map-get($map: var.$colors-map, $key: "primary");
+    gap: 2rem;
+
+    @media (min-width:768px) {
+        margin-top: 8.5rem;
+    }
+
+    @media (min-width:1440px) {
+        width: 80%;
+        flex-direction: row;
+    }
+}
+
+.destination__main {
+    @include mix.flex-box(column, nowrap, space-around, center);
+    gap: 2rem;
+    width: 100%;
+
+    @media (min-width:768px) {
+        gap: 3.75rem;
+    }
+}
+
+.destination__h5 {
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+        align-self: flex-start;
+    }
+}
+
+.destination__span {
+    color: map-get($map: var.$colors-map, $key: "primary");
+    opacity: .25;
+    margin-right: 1rem;
+}
+
+.destination__img {
+    width: 10.625rem;
+    height: 10.625rem;
+
+    @media (min-width:768px) {
+        width: 18.75rem;
+        height: 18.75rem;
+    }
+
+    @media (min-width:1440px) {
+        width: 27.8125rem;
+        height: 27.8125rem;
+    }
+}
+
+.destination__selected {
+    @include mix.flex-box(column, nowrap, space-around, center);
+    width: 83%;
+    gap: 2rem;
+
+    @media (min-width:1440px) {
+        width: 50%;
+        align-items: flex-start;
+    }
+}

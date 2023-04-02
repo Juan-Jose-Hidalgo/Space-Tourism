@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { ComponentsModule } from 'src/app/components/components.module';
 import { DestinationRoutingModule } from './destination-routing.module';
-
 import { SharedModule } from 'src/app/shared/shared.module';
 
 import { DestinationComponent } from './destination.component';
+
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { DestinationComponent } from './destination.component';
   ],
   imports: [
     CommonModule,
+    ComponentsModule,
     DestinationRoutingModule,
     SharedModule
   ]

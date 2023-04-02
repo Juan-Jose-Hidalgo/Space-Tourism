@@ -15,7 +15,7 @@ export class MenuComponent {
 
   public menu: Menu[] = [
     { title: 'Home', url: '/home', span: '00' },
-    { title: 'Destination', url: '/destination', span: '01' },
+    { title: 'Destination', url: '/destination/moon', span: '01' },
     { title: 'Crew', url: '/crew', span: '02' },
     { title: 'Technology', url: '/technology', span: '03' }
   ]

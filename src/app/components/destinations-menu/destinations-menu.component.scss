@@ -1,0 +1,39 @@
+@use "mixins" as mix;
+@use "variables" as var;
+
+.destination-nav {
+    @include mix.flex-box(column, nowrap, center, center);
+}
+
+.destination-nav__ul {
+    @include mix.flex-box(row, nowrap, space-between, center);
+    gap: 1rem;
+
+    @media (min-width:1440px) {
+        gap: 2rem;
+    }
+}
+
+.destination-nav__a {
+    font-size: .875rem;
+    line-height: 1.0625rem;
+    letter-spacing: 2.3625px;
+    text-transform: uppercase;
+    padding-bottom: 11px;
+    border-bottom: 3px solid transparent;
+    transition: all .5s;
+
+    &:hover {
+        border-bottom: 3px solid rgba(255, 255, 255, .5);
+    }
+
+    @media (min-width: 768px) {
+        font-size: 1rem;
+        line-height: 1.1875rem;
+        letter-spacing: 2.7px;
+    }
+}
+
+.destination-nav__a--active {
+    border-bottom: 3px solid map-get($map: var.$colors-map, $key: "primary");
+}

@@ -1,1 +1,27 @@
-<app-menu></app-menu>
+<div class="destination">
+
+    <div class="destination__container">
+
+        <!--* Title & Img -->
+        <div class="destination__main">
+
+            <h5 class="destination__h5"><span class="destination__span">01 </span>Pick your destination</h5>
+
+            <picture>
+                <source class="destination__img" [src]="destination.image.webp" type="image/webp" accept="image/webp">
+                <img class="destination__img" [src]="destination.image.png" width="445" height="445" loading="lazy"
+                    alt="Destination image">
+            </picture>
+
+        </div>
+
+        <!--* Navigation & Component -->
+        <div class="destination__selected">
+            <app-destinations-menu (destination)="changeDestination($event)"
+                [destinations]="destinations"></app-destinations-menu>
+            <app-selected-destination [destination]="destination"></app-selected-destination>
+        </div>
+
+    </div>
+
+</div>
