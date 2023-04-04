@@ -37,12 +37,12 @@ h1 {
 h5 {
     font-size: 1rem;
     line-height: 1.1875rem;
-    letter-spacing: 2.7px;
+    letter-spacing: 2.7008px;
 
     @media (min-width: 768px) {
         font-size: 1.25rem;
         line-height: 1.5rem;
-        letter-spacing: 3.375px;
+        letter-spacing: 3.3744px;
     }
 
     @media (min-width:1440px) {
@@ -70,6 +70,68 @@ h5 {
     }
 }
 
+.heading-3 {
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media (min-width:768px) {
+        font-size: 2.5rem;
+        line-height: 2.875rem;
+    }
+
+    @media (min-width: 1440px) {
+        font-size: 3.5rem;
+        line-height: 4rem;
+    }
+}
+
+.heading-4 {
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.125rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media (min-width:768px) {
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+    }
+
+    @media (min-width:1440px) {
+        font-size: 2rem;
+        line-height: 2.3125rem;
+    }
+}
+
+.heading-5 {
+    color: map-get($map: var.$colors-map, $key: "accent");
+    font-family: map-get($map: var.$fonts-map, $key: "primary");
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.1875rem;
+    text-align: center;
+    letter-spacing: 2.7008px;
+    text-transform: uppercase;
+
+    @media (min-width:768px) {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        letter-spacing: .2109rem;
+    }
+
+    @media (min-width:1440px) {
+        font-size: 1.75rem;
+        line-height: 2.125rem;
+        letter-spacing: .2953rem;
+    }
+}
+
 .subheading-1 {
     color: map-get($map: var.$colors-map, $key: "primary");
     font-family: map-get($map: var.$fonts-map, $key: "secondary");
@@ -85,6 +147,6 @@ h5 {
     font-size: .875rem;
     line-height: 1.0625rem;
     text-align: center;
-    letter-spacing: 2.3625px;
+    letter-spacing: 2.3632px;
     text-transform: uppercase;
 }
