@@ -4,15 +4,18 @@ import { RouterModule } from '@angular/router';
 
 import { DestinationsMenuComponent } from './destinations-menu/destinations-menu.component';
 import { SelectedDestinationComponent } from './selected-destination/selected-destination.component';
+import { CrewInfoComponent } from './crew-info/crew-info.component';
 
 
 
 @NgModule({
   declarations: [
+    CrewInfoComponent,
     DestinationsMenuComponent,
     SelectedDestinationComponent,
   ],
   exports: [
+    CrewInfoComponent,
     DestinationsMenuComponent,
     SelectedDestinationComponent,
   ],

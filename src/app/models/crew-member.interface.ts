@@ -1,10 +1,9 @@
 import { ImgInterface } from "./img.interface";
 
-export interface Destination {
+export interface CrewMember {
     id: number;
-    description: string;
-    distance: string;
+    bio: string;
     image: ImgInterface;
     name: string;
-    travelTime: string;
+    rank: string;
 }
