@@ -8,7 +8,8 @@
         </div>
 
         <!--* Image -->
-        <div class="image">
+        <div class="image carousel__fade" *ngFor="let destination of destinations; let i = index"
+            [ngClass]="{'image--active': selectedIndex === i}">
             <picture>
                 <source class="image__img" [src]="destination.image.webp" type="image/webp" accept="image/webp">
                 <img class="image__img" [ngSrc]="destination.image.png" fill alt="Destination image">
@@ -17,12 +18,13 @@
 
         <!--* Navigation -->
         <div class="destination__navigation">
-            <app-destinations-menu (destination)="changeDestination($event)"
-                [destinations]="destinations"></app-destinations-menu>
+            <app-destinations-menu [destinations]="destinations"
+                (updatedIndex)="changeIndex($event)"></app-destinations-menu>
         </div>
 
         <!--* Destination -->
-        <div class="destination__selected">
+        <div class="destination__selected carousel__fade" *ngFor="let destination of destinations; let i = index"
+            [ngClass]="{'destination__selected--active': selectedIndex === i}">
             <app-selected-destination [destination]="destination"></app-selected-destination>
         </div>
 

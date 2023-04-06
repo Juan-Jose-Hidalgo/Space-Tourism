@@ -8,9 +8,12 @@ import { Destination } from 'src/app/models/destination.interface';
 })
 export class DestinationsMenuComponent {
   @Input() destinations: Destination[] = [];
-  @Output() destination = new EventEmitter<string>();
+  @Output() updatedIndex = new EventEmitter<number>();
 
-  sendDestination(destination: string) {
-    this.destination.emit(destination);
+  public selectedIndex = 0;
+
+  changeIndex(index: number) {
+    this.selectedIndex = index;
+    this.updatedIndex.emit(index);
   }
 }

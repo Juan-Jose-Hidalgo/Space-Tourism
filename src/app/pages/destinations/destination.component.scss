@@ -75,8 +75,19 @@
 }
 
 .image {
+    display: none;
+}
+
+.image--active {
+    display: block;
     position: relative;
     grid-area: img;
+
+    @media (min-width: 1440px) {
+        height: 445px;
+        width: 445px;
+        justify-self: center;
+    }
 }
 
 .image__img {
@@ -93,5 +104,10 @@
 }
 
 .destination__selected {
+    display: none;
+}
+
+.destination__selected--active {
+    display: block;
     grid-area: destination;
 }
