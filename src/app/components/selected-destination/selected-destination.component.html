@@ -1,22 +1,25 @@
 <div class="selected-destination">
 
-    <!--* Name & Description -->
-    <div class="selected-destination__text">
+    <!--* Title -->
+    <div class="selected-destination__title">
         <h1 class="heading-2">{{destination.name}}</h1>
+    </div>
+
+    <!--* Description -->
+    <div class="selected-destination__description">
         <p class="selected-destination__p">{{destination.description}}</p>
     </div>
 
-    <!--* Distance & Traveltime info -->
-    <div class="selected-destination__info">
-        <div class="selected-destination__distance">
-            <p class="subheading-2">avg. distance</p>
-            <p class="subheading-1">{{destination.distance}}</p>
-        </div>
+    <!--* Distance -->
+    <div class="selected-destination__distance">
+        <p class="subheading-2">avg. distance</p>
+        <p class="subheading-1">{{destination.distance}}</p>
+    </div>
 
-        <div class="selected-destination__travel">
-            <p class="subheading-2">Est. travel time</p>
-            <p class="subheading-1">{{destination.travelTime}}</p>
-        </div>
+    <!--* Travel time -->
+    <div class="selected-destination__travel">
+        <p class="subheading-2">Est. travel time</p>
+        <p class="subheading-1">{{destination.travelTime}}</p>
     </div>
 
 </div>

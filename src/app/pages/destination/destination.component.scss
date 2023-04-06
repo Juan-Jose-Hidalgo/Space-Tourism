@@ -2,12 +2,12 @@
 @use 'variables' as var;
 
 .destination {
-    @include mix.flex-box(column, nowrap, space-between, center);
+    @include mix.flex-box(column, nowrap, flex-end, center);
+    width: 100%;
     min-height: 100vh;
     background-image: url('/assets/img/destination/background-destination-mobile.jpg');
     background-size: cover;
     background-position: center;
-    overflow: hidden;
 
     @media (min-width: 48rem) {
         background-image: url('/assets/img/destination/background-destination-tablet.jpg');
@@ -20,38 +20,51 @@
 }
 
 .destination__container {
-    @include mix.flex-box(column, nowrap, space-between, center);
     width: 90%;
-    margin: 0 auto;
-    margin-top: 6rem;
+    max-width: 1900px;
+    margin-top: 5rem;
+    min-height: calc(100vh - 5rem);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 10.625rem auto auto;
+    grid-template-areas:
+        'title'
+        'img'
+        'nav'
+        'destination';
+    gap: 1rem;
     color: map-get($map: var.$colors-map, $key: "primary");
-    gap: 2rem;
 
     @media (min-width:768px) {
-        margin-top: 8.5rem;
+        margin-top: 8.625rem;
+        min-height: calc(100vh - 8.625rem);
+        grid-template-rows: auto 300px auto auto;
     }
 
     @media (min-width:1440px) {
         width: 80%;
-        flex-direction: row;
+        min-height: 31.25rem;
+        height: calc(100vh - 16.3125rem);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas:
+            'title title'
+            'img nav'
+            'img destination';
+        gap: 0;
+        column-gap: 6rem;
     }
 }
 
-.destination__main {
-    @include mix.flex-box(column, nowrap, space-around, center);
-    gap: 2rem;
-    width: 100%;
 
-    @media (min-width:768px) {
-        gap: 3.75rem;
-    }
+.destination__title {
+    grid-area: title;
 }
 
-.destination__h5 {
-    text-transform: uppercase;
+.heading-5 {
 
     @media (min-width: 768px) {
-        align-self: flex-start;
+        text-align: left;
     }
 }
 
@@ -61,28 +74,24 @@
     margin-right: 1rem;
 }
 
-.destination__img {
-    width: 10.625rem;
-    height: 10.625rem;
+.image {
+    position: relative;
+    grid-area: img;
+}
 
-    @media (min-width:768px) {
-        width: 18.75rem;
-        height: 18.75rem;
-    }
+.image__img {
+    object-fit: contain;
+}
+
+.destination__navigation {
+    grid-area: nav;
+    align-self: center;
 
     @media (min-width:1440px) {
-        width: 27.8125rem;
-        height: 27.8125rem;
+        justify-self: start;
     }
 }
 
 .destination__selected {
-    @include mix.flex-box(column, nowrap, space-around, center);
-    width: 83%;
-    gap: 2rem;
-
-    @media (min-width:1440px) {
-        width: 50%;
-        align-items: flex-start;
-    }
+    grid-area: destination;
 }

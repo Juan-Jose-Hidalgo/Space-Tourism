@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 import { ComponentsModule } from 'src/app/components/components.module';
 import { DestinationRoutingModule } from './destination-routing.module';
@@ -20,6 +20,7 @@ import { DestinationComponent } from './destination.component';
     CommonModule,
     ComponentsModule,
     DestinationRoutingModule,
+    NgOptimizedImage,
     SharedModule
   ]
 })
