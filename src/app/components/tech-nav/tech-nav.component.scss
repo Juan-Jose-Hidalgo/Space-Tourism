@@ -1,0 +1,55 @@
+@use "mixins" as mix;
+@use "variables" as var;
+
+.navigation__ul {
+    display: flex;
+    gap: 16px;
+
+    @media (min-width:1440px) {
+        flex-direction: column;
+        gap: 32px;
+    }
+}
+
+.navigation__btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .25);
+    color: map-get($map: var.$colors-map, $key: "primary");
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 1px;
+    transition: all .3s ease;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid map-get($map: var.$colors-map, $key: "primary");
+    }
+
+    @media (min-width: 768px) {
+        width: 58px;
+        height: 58px;
+        font-size: 24px;
+        line-height: 28px;
+        letter-spacing: 1.5px;
+    }
+
+    @media (min-width:1440px) {
+        width: 80px;
+        height: 80px;
+        font-size: 32px;
+        line-height: 37px;
+        letter-spacing: 2px;
+    }
+}
+
+.navigation__btn--active {
+    background-color: map-get($map: var.$colors-map, $key: "primary");
+    color: map-get($map: var.$colors-map, $key: "secondary");
+}
+
+.navigation__span {
+    opacity: 1;
+}

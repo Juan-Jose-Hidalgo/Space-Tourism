@@ -1,0 +1,7 @@
+<ul class="navigation__ul">
+    <li class="navigation__li" *ngFor="let tech of technologies; let i = index" (click)="updateIndex(i)">
+        <button class="navigation__btn" [ngClass]="{'navigation__btn--active': selectedIndex === i}">
+            {{i+1}}
+        </button>
+    </li>
+</ul>

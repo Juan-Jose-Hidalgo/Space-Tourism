@@ -2,37 +2,115 @@
 @use 'variables' as var;
 
 .technology {
-    @include mix.flex-box(column, nowrap, space-between, center);
+    @include mix.flex-box(column, nowrap, flex-end, center);
+    width: 100%;
     min-height: 100vh;
     background-image: url('/assets/img/technology/background-technology-mobile.jpg');
     background-size: cover;
     background-position: center;
-    overflow: hidden;
 
-    @media (min-width: 48rem) {
+    @media (min-width: 768px) {
         background-image: url('/assets/img/technology/background-technology-tablet.jpg');
     }
 
-    @media (min-width: 90rem) {
+    @media (min-width: 1440px) {
         background-image: url('/assets/img/technology/background-technology-desktop.jpg');
         justify-content: center;
     }
 }
 
 .technology__container {
-    @include mix.flex-box(column, nowrap, space-between, center);
-    width: 90%;
-    margin: 0 auto;
-    margin-top: 6rem;
+    width: 100%;
+    margin-top: 5rem;
+    min-height: calc(100vh - 5rem);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 10.625rem auto auto;
+    grid-template-areas:
+        'title'
+        'img'
+        'nav'
+        'info';
+    gap: 1rem;
     color: map-get($map: var.$colors-map, $key: "primary");
-    gap: 2rem;
 
-    @media (min-width:768px) {
-        margin-top: 8.5rem;
+    @media (min-width:48rem) {
+        margin-top: 8.625rem;
+        min-height: calc(100vh - 8.625rem);
+        grid-template-rows: auto 19.375rem auto auto;
     }
 
-    @media (min-width:1440px) {
+    @media (min-width:90rem) {
+        min-height: 31.25rem;
+        height: calc(100vh - 16.3125rem);
+        grid-template-columns: 1fr 3fr 43.75rem;
+        grid-template-rows: 2rem 35.75rem;
+        grid-template-areas:
+            'title title title'
+            'nav info img';
+        column-gap: 4rem;
+    }
+}
+
+.technology__title {
+    grid-area: title;
+    width: 90%;
+    margin: 0 auto;
+
+    @media (min-width:90rem) {
         width: 80%;
-        flex-direction: row;
+    }
+}
+
+.heading-5 {
+    @media (min-width:48rem) {
+        text-align: left;
+    }
+}
+
+.navigation {
+    grid-area: nav;
+    justify-self: center;
+    align-self: center;
+
+    @media (min-width:90rem) {
+        height: 100%;
+        justify-self: end;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+
+.info {
+    display: none;
+}
+
+.info--active {
+    @include mix.flex-box(column, nowrap, center, center);
+    grid-area: info;
+    gap: 1rem;
+    text-align: center;
+    align-self: start;
+
+    @media (min-width:90rem) {
+        text-align: left;
+        align-items: flex-start;
+        height: 100%;
+    }
+}
+
+.technology__image {
+    display: none;
+}
+
+.technology__image--active {
+    position: relative;
+    width: 100%;
+    display: block;
+    grid-area: img;
+
+    @media (min-width:90rem) {
+        height: 35.75rem;
     }
 }

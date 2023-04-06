@@ -2,6 +2,32 @@
 
     <div class="technology__container">
 
+        <!--* Title -->
+        <div class="technology__title">
+            <h3 class="heading-5"><span class="techonolgy__span">02 </span> Space launch 101</h3>
+        </div>
+
+        <!--* Navigation -->
+        <nav class="navigation">
+            <app-tech-nav [technologies]="technologies" (newIndex)="updateIndex($event)"></app-tech-nav>
+        </nav>
+
+        <!--* Technology info -->
+        <div class="info" *ngFor="let tech of technologies; let i = index"
+            [ngClass]="{'info--active': selectedIndex === i}">
+            <app-tech-info [technology]="tech"></app-tech-info>
+        </div>
+
+        <!--* Techonology image -->
+        <div class="technology__image" *ngFor="let tech of technologies; let i = index"
+            [ngClass]="{'technology__image--active': selectedIndex === i}">
+            <img *ngIf="landscape; else portrait" [ngSrc]="tech.image.landscape" fill alt="{{tech.title}}">
+            <ng-template #portrait>
+                <img [ngSrc]="tech.image.portrait" fill alt="{{tech.title}}">
+            </ng-template>
+        </div>
+
     </div>
+
 
 </div>
