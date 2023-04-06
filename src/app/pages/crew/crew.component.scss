@@ -8,11 +8,11 @@
     background-size: cover;
     background-position: center;
 
-    @media (min-width: 768px) {
+    @media (min-width: 48rem) {
         background-image: url('/assets/img/crew/background-crew-tablet.jpg');
     }
 
-    @media (min-width: 1440px) {
+    @media (min-width: 90rem) {
         background-image: url('/assets/img/crew/background-crew-desktop.jpg');
 
     }
@@ -20,9 +20,9 @@
 
 .crew__container {
     width: 90%;
-    max-width: 1900px;
-    margin-top: 50px;
-    min-height: calc(100vh - 120px);
+    max-width: 118.75rem;
+    margin-top: 3.125rem;
+    min-height: calc(100vh - 7.5rem);
     display: grid;
     grid-template-areas:
         'title title title title title title'
@@ -32,9 +32,9 @@
     gap: 1rem;
     color: map-get($map: var.$colors-map, $key: "primary");
 
-    @media (min-width:768px) {
-        margin-top: 138px;
-        min-height: calc(100vh - 138px);
+    @media (min-width:48rem) {
+        margin-top: 8.625rem;
+        min-height: calc(100vh - 8.625rem);
         grid-template-areas:
             'title title title title title title'
             'info info info info info info'
@@ -42,10 +42,10 @@
             'img img img img img img';
     }
 
-    @media (min-width:1440px) {
+    @media (min-width:90rem) {
         width: 80%;
-        margin-top: 200px;
-        min-height: calc(100vh - 236px);
+        margin-top: 12.5rem;
+        min-height: calc(100vh - 14.75rem);
         grid-template-columns: repeat(6, 1fr);
         grid-template-areas:
             'title title title img img img'
@@ -58,7 +58,7 @@
 .crew__title {
     grid-area: title;
 
-    @media (min-width:768px) {
+    @media (min-width:48rem) {
         text-align: left;
         justify-self: start;
     }
@@ -80,7 +80,7 @@
     margin: 0 auto;
     gap: 1rem;
 
-    @media (min-width: 1440px) {
+    @media (min-width: 90rem) {
         margin: initial;
         justify-self: start;
         align-self: start;
@@ -88,8 +88,8 @@
 }
 
 .dots__dot {
-    width: 10px;
-    height: 10px;
+    width: .625rem;
+    height: .625rem;
     border-radius: 50%;
     background-color: map-get($map: var.$colors-map, $key: "primary");
     opacity: .17;
@@ -113,20 +113,20 @@
     display: block;
     position: relative;
     grid-area: img;
-    height: 220px;
+    height: 13.75rem;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    border-bottom: 1px solid #2a2d38;
+    border-bottom: .0625rem solid #2a2d38;
     align-self: end;
 
-    @media (min-width: 768px) {
-        height: 500px;
+    @media (min-width: 48rem) {
+        height: 31.25rem;
         border-bottom: none;
     }
 
-    @media (min-width: 1440px) {
-        height: 700px;
+    @media (min-width: 90rem) {
+        height: 43.75rem;
         justify-self:auto;
         background-position: bottom right;
     }
@@ -136,7 +136,7 @@
     object-fit: contain;
     object-position: center;
 
-    @media(min-width: 1440px) {
+    @media(min-width: 90rem) {
         object-position: right;
     }
 }
