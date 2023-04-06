@@ -68,6 +68,12 @@
     }
 }
 
+.technology__span {
+    color: map-get($map: var.$colors-map, $key: "primary");
+    opacity: .25;
+    margin-right: 1rem;
+}
+
 .navigation {
     grid-area: nav;
     justify-self: center;

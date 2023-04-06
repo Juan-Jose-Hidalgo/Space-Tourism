@@ -16,7 +16,7 @@
         <!--* Button block -->
         <div class="home__circles">
             <div class="home__circle home__circle--large" [ngClass]="{'home__circle--hover':hover}"></div>
-            <a [routerLink]="['/destination', 'moon']" class="home__circle home__circle--small"
+            <a routerLink="/destination" class="home__circle home__circle--small"
                 (mouseenter)="toogleHover()" (mouseleave)="toogleHover()">Explore</a>
         </div>
     </div>

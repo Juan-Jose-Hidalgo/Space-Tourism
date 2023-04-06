@@ -1,0 +1,96 @@
+@use "mixins" as mix;
+
+.selected-destination {
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+        'title'
+        'desc'
+        'distance'
+        'travel';
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+        grid-template-areas:
+            'title title'
+            'desc desc'
+            'distance travel';
+    }
+
+    @media (min-width:1440px) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            'title title title title'
+            'desc desc desc desc'
+            'distance travel none none';
+    }
+}
+
+.selected-destination__title {
+    grid-area: title;
+}
+
+.heading-2 {
+    @media (min-width:1440px) {
+        text-align: left;
+    }
+}
+
+.selected-destination__description {
+    grid-area: desc;
+
+    @media (min-width:768px) {
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    @media (min-width:1440px) {
+        width: 25rem;
+        margin: initial;
+    }
+}
+
+.selected-destination__p {
+    text-align: center;
+    min-height: 8.3125rem;
+    border-bottom: 1px solid #383B4B;
+
+    @media (min-width:1440px) {
+        text-align: justify;
+        min-height: 150px;
+        margin-bottom: 2rem;
+    }
+
+}
+
+.selected-destination__distance {
+    grid-area: distance;
+
+    @media (min-width:768px) {
+        justify-self: end;
+    }
+
+    @media (min-width:1440px) {
+        justify-self: start;
+    }
+}
+
+.selected-destination__travel {
+    grid-area: travel;
+
+    @media (min-width:768px) {
+        justify-self: start;
+    }
+}
+
+
+.selected-destination__distance,
+.selected-destination__travel {
+    @include mix.flex-box(column, nowrap, center, center);
+    gap: .3125rem;
+
+    @media (min-width:1440px) {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}

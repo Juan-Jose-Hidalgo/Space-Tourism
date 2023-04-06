@@ -14,7 +14,7 @@
     }
 }
 
-.destination-nav__a {
+.destination-nav__btn {
     font-size: .875rem;
     line-height: 1.0625rem;
     letter-spacing: 2.3625px;
@@ -22,6 +22,7 @@
     padding-bottom: 11px;
     border-bottom: 3px solid transparent;
     transition: all .5s;
+    cursor: pointer;
 
     &:hover {
         border-bottom: 3px solid rgba(255, 255, 255, .5);
@@ -34,6 +35,6 @@
     }
 }
 
-.destination-nav__a--active {
+.destination-nav__btn--active {
     border-bottom: 3px solid map-get($map: var.$colors-map, $key: "primary");
 }

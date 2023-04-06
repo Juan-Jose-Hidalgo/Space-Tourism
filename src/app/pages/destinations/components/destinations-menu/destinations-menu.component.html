@@ -1,0 +1,8 @@
+<nav class="destination-nav">
+    <ul class="destination-nav__ul">
+        <li class="destination-nav__li" *ngFor="let destination of destinations; let i = index">
+            <button class="destination-nav__btn" [ngClass]="{'destination-nav__btn--active': selectedIndex === i}"
+                (click)="changeIndex(i)">{{destination.name}}</button>
+        </li>
+    </ul>
+</nav>
