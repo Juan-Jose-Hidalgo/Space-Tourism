@@ -14,43 +14,42 @@
 
     @media (min-width: 90rem) {
         background-image: url('/assets/img/crew/background-crew-desktop.jpg');
-
     }
 }
 
 .crew__container {
     width: 90%;
     max-width: 118.75rem;
-    margin-top: 3.125rem;
-    min-height: calc(100vh - 7.5rem);
+    margin-top: 5rem;
+    min-height: calc(100vh - 5rem);
     display: grid;
     grid-template-areas:
-        'title title title title title title'
-        'img img img img img img'
-        'dots dots dots dots dots dots'
-        'info info info info info info';
+        'title'
+        'img'
+        'dots'
+        'info';
     gap: 1rem;
     color: map-get($map: var.$colors-map, $key: "primary");
 
-    @media (min-width:48rem) {
+    @media (min-width:768px) {
         margin-top: 8.625rem;
         min-height: calc(100vh - 8.625rem);
         grid-template-areas:
-            'title title title title title title'
-            'info info info info info info'
-            'dots dots dots dots dots dots'
-            'img img img img img img';
+            'title'
+            'info'
+            'dots'
+            'img';
     }
 
-    @media (min-width:90rem) {
+    @media (min-width:1440px) {
         width: 80%;
-        margin-top: 12.5rem;
-        min-height: calc(100vh - 14.75rem);
-        grid-template-columns: repeat(6, 1fr);
+        height: calc(100vh - 16.3125rem);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
         grid-template-areas:
-            'title title title img img img'
-            'info info info img img img'
-            'dots dots dots img img img';
+            'title img'
+            'info img'
+            'dots img';
         gap: 0;
     }
 }
@@ -58,9 +57,13 @@
 .crew__title {
     grid-area: title;
 
-    @media (min-width:48rem) {
+    @media (min-width:768px) {
         text-align: left;
         justify-self: start;
+    }
+
+    @media (min-width:1440px) {
+        margin-top: 4rem;
     }
 }
 
@@ -127,12 +130,11 @@
 
     @media (min-width: 90rem) {
         height: 43.75rem;
-        justify-self:auto;
         background-position: bottom right;
     }
 }
 
-.crew__img{
+.crew__img {
     object-fit: contain;
     object-position: center;
 
@@ -140,4 +142,3 @@
         object-position: right;
     }
 }
-
