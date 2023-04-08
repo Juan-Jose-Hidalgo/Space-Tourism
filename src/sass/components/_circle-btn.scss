@@ -1,0 +1,78 @@
+@use "mixins" as mix;
+@use "variables" as var;
+
+.circles {
+    position: relative;
+    width: 18.75rem;
+    height: 18.75rem;
+}
+
+.circle {
+    border-radius: 50%;
+    position: absolute;
+
+    @media (min-width: 768px) {
+        width: 22rem;
+        height: 22rem;
+    }
+
+    @media (min-width:1440px) {
+        width: 26rem;
+        height: 26rem;
+    }
+}
+
+.circle--large {
+    background-color: map-get($map: var.$colors-map, $key: "primary");
+    opacity: 0;
+    width: 17rem;
+    height: 17rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .5s ease;
+
+    @media (min-width: 768px) {
+        width: 22rem;
+        height: 22rem;
+    }
+
+    @media (min-width:1440px) {
+        width: 450px;
+        height: 450px;
+    }
+}
+
+.circle--hover {
+    opacity: 0.1;
+}
+
+.circle--small {
+    @include mix.flex-box(column, nowrap, center, center);
+    background-color: map-get($map: var.$colors-map, $key: "primary");
+    color: map-get($map: var.$colors-map, $key: "secondary");
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    font-size: 1.25rem;
+    line-height: 1.4375rem;
+    letter-spacing: 1.25px;
+    width: 9.375rem;
+    height: 9.375rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+
+    @media (min-width:768px) {
+        width: 15.125rem;
+        height: 15.125rem;
+        font-size: 2rem;
+        line-height: 2.3125rem;
+        letter-spacing: 2px;
+    }
+
+    @media (min-width:1440px) {
+        width: 17.125rem;
+        height: 17.125rem;
+    }
+
+}

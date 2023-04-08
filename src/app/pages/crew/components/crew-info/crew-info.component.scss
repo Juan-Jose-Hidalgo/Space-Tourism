@@ -8,7 +8,6 @@
 .crew-members__member--active {
     @include mix.flex-box(column, nowrap, center, center);
     gap: .5rem;
-    text-align: center;
 
     @media (min-width: 768px) {
         width: 70%;
@@ -18,16 +17,11 @@
     @media (min-width:1440px){
         width: 100%;
         align-items: flex-start;
-        text-align: left;
         gap: 1rem;
     }
 }
 
-.heading-4 {
-    opacity: .5;
-}
-
-.crew-members__p {
+.body-text {
     min-height: 100px;
 
     @media (min-width: 768px) {
