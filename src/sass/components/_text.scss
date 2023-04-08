@@ -24,6 +24,7 @@
 }
 
 .heading-1 {
+    color: map-get($map: var.$colors-map, $key: "primary");
     font-family: map-get($map: var.$fonts-map, $key: "secondary");
     font-style: normal;
     font-weight: 400;

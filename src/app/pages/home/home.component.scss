@@ -1,5 +1,4 @@
 @use 'mixins' as mix;
-@use 'variables' as var;
 
 .container {
     background-image: url('/assets/img/home/background-home-mobile.jpg');
@@ -13,35 +12,71 @@
     }
 }
 
-.home__container {
-    @include mix.flex-box(column, nowrap, space-around, center);
+.container__content {
     width: 90%;
-    min-height: calc(100vh - 6rem);
-    margin: 0 auto;
-    color: map-get($map: var.$colors-map, $key: "primary");
-    padding-top: 1rem;
+    grid-template-areas:
+        'title'
+        'h1'
+        'text'
+        'btn';
+    align-items: end;
+    gap: 0;
 
     @media (min-width: 768px) {
-        min-height: calc(100vh - 6.1875rem);
-        width: 60%;
-        padding-top: 3rem;
+        align-items: center;
     }
 
     @media (min-width:1440px) {
         width: 80%;
-        min-height: calc(100vh - 11.3125rem);
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        grid-template-areas:
+            'title btn'
+            'h1 btn'
+            'text btn';
     }
 }
 
-.home__text {
-    @include mix.flex-box(column, nowrap, space-between, center);
-    gap: 1rem;
+.heading-5 {
+    grid-area: title;
+
+    @media (min-width: 768px) {
+        text-align: center;
+        align-self: end;
+    }
 
     @media (min-width:1440px) {
-        width: 30%;
-        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+.heading-1 {
+    grid-area: h1;
+
+    @media (min-width:1440px) {
+        text-align: left;
+    }
+}
+
+.body-text {
+    grid-area: text;
+
+    @media (min-width:768px) {
+        width: 450px;
+        justify-self: center;
+        align-self: start;
+    }
+
+    @media (min-width:1440px) {
+        justify-self: start;
+    }
+}
+
+.circles {
+    grid-area: btn;
+    justify-self: center;
+
+    @media (min-width:1440px){
+        align-self: end;
+        margin-bottom: 5rem;
+        justify-self: end;
     }
 }

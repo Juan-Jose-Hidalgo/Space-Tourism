@@ -1,23 +1,21 @@
 <div class="container">
 
-    <div class="home__container">
+    <div class="container__content">
 
         <!--* Text block -->
-        <div class="home__text">
-            <h2 class="heading-5">So, you want travel to</h2>
-            <h1 class="heading-1">Space</h1>
-            <p class="body-text">
-                Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not
-                hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this
-                world experience!
-            </p>
-        </div>
+        <h2 class="heading-5">So, you want travel to</h2>
+        <h1 class="heading-1">Space</h1>
+        <p class="body-text">
+            Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not
+            hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this
+            world experience!
+        </p>
 
         <!--* Button block -->
         <div class="circles">
             <div class="circle circle--large" [ngClass]="{'circle--hover':hover}"></div>
-            <a routerLink="/destination" class="circle circle--small"
-                (mouseenter)="toogleHover()" (mouseleave)="toogleHover()">Explore</a>
+            <a routerLink="/destination" class="circle circle--small" (mouseenter)="toogleHover()"
+                (mouseleave)="toogleHover()">Explore</a>
         </div>
     </div>
 
