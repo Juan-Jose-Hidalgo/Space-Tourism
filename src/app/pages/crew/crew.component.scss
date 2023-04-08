@@ -1,0 +1,122 @@
+@use 'mixins' as mix;
+@use 'variables' as var;
+
+.container {
+    background-image: url('/assets/img/crew/background-crew-mobile.jpg');
+
+    @media (min-width: 48rem) {
+        background-image: url('/assets/img/crew/background-crew-tablet.jpg');
+    }
+
+    @media (min-width: 90rem) {
+        background-image: url('/assets/img/crew/background-crew-desktop.jpg');
+        justify-content: flex-end;
+    }
+}
+
+.container__content {
+    width: 90%;
+    max-width: 118.75rem;
+    grid-template-areas:
+        'title'
+        'img'
+        'dots'
+        'info';
+
+    @media (min-width:768px) {
+        min-height: calc(100vh - 8.625rem);
+        grid-template-areas:
+            'title'
+            'info'
+            'dots'
+            'img';
+    }
+
+    @media (min-width:1440px) {
+        width: 80%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+            'title img'
+            'info img'
+            'dots img';
+        gap: 0;
+    }
+}
+
+.container__title {
+
+    @media (min-width:1440px) {
+        margin-top: 4rem;
+    }
+}
+
+.crew__component {
+    grid-area: info;
+}
+
+.dots {
+    grid-area: dots;
+    @include mix.flex-box(row, nowrap, space-between, center);
+    margin: 0 auto;
+    gap: 1rem;
+
+    @media (min-width: 90rem) {
+        margin: initial;
+        justify-self: start;
+        align-self: start;
+    }
+}
+
+.dots__dot {
+    width: .625rem;
+    height: .625rem;
+    border-radius: 50%;
+    background-color: map-get($map: var.$colors-map, $key: "primary");
+    opacity: .17;
+    transition: all .5s ease;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.dots__dot--active {
+    opacity: 1;
+}
+
+.crew__image {
+    display: none;
+}
+
+.crew__image--active {
+    display: block;
+    position: relative;
+    grid-area: img;
+    height: 13.75rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom: .0625rem solid #2a2d38;
+    align-self: end;
+
+    @media (min-width: 48rem) {
+        height: 31.25rem;
+        border-bottom: none;
+    }
+
+    @media (min-width: 90rem) {
+        height: 43.75rem;
+        background-position: bottom right;
+    }
+}
+
+.crew__img {
+    object-fit: contain;
+    object-position: center;
+
+    @media(min-width: 90rem) {
+        object-position: right;
+    }
+}

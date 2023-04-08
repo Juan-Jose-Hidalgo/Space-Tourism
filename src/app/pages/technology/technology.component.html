@@ -1,1 +1,33 @@
-<app-menu></app-menu>
+<div class="container">
+
+    <div class="container__content">
+
+        <!--* Title -->
+        <div class="container__title">
+            <h2 class="heading-5"><span class="container__span">03 </span> Space launch 101</h2>
+        </div>
+
+        <!--* Navigation -->
+        <nav class="navigation">
+            <app-tech-nav [technologies]="technologies" (newIndex)="updateIndex($event)"></app-tech-nav>
+        </nav>
+
+        <!--* Technology info -->
+        <div class="info carousel__fade" *ngFor="let tech of technologies; let i = index"
+            [ngClass]="{'info--active': selectedIndex === i}">
+            <app-tech-info [technology]="tech"></app-tech-info>
+        </div>
+
+        <!--* Techonology image -->
+        <div class="technology__image carousel__fade" *ngFor="let tech of technologies; let i = index"
+            [ngClass]="{'technology__image--active': selectedIndex === i}">
+            <img *ngIf="landscape; else portrait" [ngSrc]="tech.image.landscape" fill alt="{{tech.title}}">
+            <ng-template #portrait>
+                <img [ngSrc]="tech.image.portrait" fill alt="{{tech.title}}">
+            </ng-template>
+        </div>
+
+    </div>
+
+
+</div>

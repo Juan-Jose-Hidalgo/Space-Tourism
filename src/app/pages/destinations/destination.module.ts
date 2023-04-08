@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 import { DestinationRoutingModule } from './destination-routing.module';
-
 import { SharedModule } from 'src/app/shared/shared.module';
 
 import { DestinationComponent } from './destination.component';
+import { DestinationsMenuComponent } from './components/destinations-menu/destinations-menu.component';
+import { SelectedDestinationComponent } from './components/destination/destination.component';
+
 
 
 @NgModule({
   declarations: [
-    DestinationComponent
+    DestinationComponent,
+    DestinationsMenuComponent,
+    SelectedDestinationComponent
   ],
   exports: [
     DestinationComponent
@@ -18,6 +22,7 @@ import { DestinationComponent } from './destination.component';
   imports: [
     CommonModule,
     DestinationRoutingModule,
+    NgOptimizedImage,
     SharedModule
   ]
 })

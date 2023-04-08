@@ -1,0 +1,92 @@
+@use 'mixins' as mix;
+@use 'variables' as var;
+
+.container {
+    background-image: url('/assets/img/technology/background-technology-mobile.jpg');
+
+    @media (min-width: 768px) {
+        background-image: url('/assets/img/technology/background-technology-tablet.jpg');
+    }
+
+    @media (min-width: 1440px) {
+        background-image: url('/assets/img/technology/background-technology-desktop.jpg');
+    }
+}
+
+.container__content {
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 10.625rem auto auto;
+    grid-template-areas:
+        'title'
+        'img'
+        'nav'
+        'info';
+
+    @media (min-width:768px) {
+        grid-template-rows: auto 19.375rem auto auto;
+    }
+
+    @media (min-width:1440px) {
+        grid-template-columns: 1fr 3fr 43.75rem;
+        grid-template-rows: 2rem 35.75rem;
+        grid-template-areas:
+            'title title title'
+            'nav info img';
+        column-gap: 4rem;
+    }
+}
+
+.container__title {
+    width: 90%;
+    margin: 0 auto;
+
+    @media (min-width:90rem) {
+        width: 80%;
+    }
+}
+
+.navigation {
+    grid-area: nav;
+    justify-self: center;
+    align-self: center;
+
+    @media (min-width:90rem) {
+        height: 100%;
+        justify-self: end;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+
+.info {
+    display: none;
+}
+
+.info--active {
+    @include mix.flex-box(column, nowrap, center, center);
+    grid-area: info;
+    align-self: start;
+
+    @media (min-width:90rem) {
+        text-align: left;
+        align-items: flex-start;
+        height: 100%;
+    }
+}
+
+.technology__image {
+    display: none;
+}
+
+.technology__image--active {
+    position: relative;
+    width: 100%;
+    display: block;
+    grid-area: img;
+
+    @media (min-width:90rem) {
+        height: 35.75rem;
+    }
+}

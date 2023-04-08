@@ -1,0 +1,12 @@
+<div class="crew-members">
+
+    <div class="crew-members__member carousel__fade" *ngFor="let item of crew; let i = index"
+        [ngClass]="{'crew-members__member--active': i === selectedIndex}">
+
+        <h3 class="heading-4">{{item.rank}}</h3>
+        <h1 class="heading-3">{{item.name}}</h1>
+        <p class="body-text">{{item.bio}}</p>
+
+    </div>
+
+</div>

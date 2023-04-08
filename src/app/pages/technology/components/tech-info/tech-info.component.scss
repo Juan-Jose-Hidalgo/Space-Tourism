@@ -1,0 +1,46 @@
+@use "mixins" as mix;
+@use "variables" as var;
+
+.info__title {
+    @include mix.flex-box(column, wrap, center, center);
+    gap: .5rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+
+    @media (min-width:1440px) {
+        width: 100%;
+        align-items: flex-start;
+    }
+}
+
+.info__description {
+    min-height: 7.8125rem;
+    width: 90%;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+        width: 70%;
+        min-height: 8.75rem;
+    }
+
+    @media (min-width:1440px) {
+        width: 57%;
+        margin: initial;
+    }
+}
+
+.info__span {
+    font-family: map-get($map: var.$fonts-map, $key: "primary");
+    font-weight: 400;
+    font-size: .875rem;
+    line-height: 1.0625rem;
+    text-align: center;
+    letter-spacing: .1477rem;
+    color: map-get($map: var.$colors-map, $key: "accent");
+
+    @media (min-width:1440px) {
+        font-size: 1rem;
+        line-height: 1.1875rem;
+        letter-spacing: .1688rem;
+    }
+}

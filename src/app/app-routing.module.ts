@@ -7,7 +7,7 @@ const routes: Routes = [
 
   { path: 'crew', loadChildren: () => import('./pages/crew/crew.module').then(m => m.CrewModule) },
 
-  { path: 'destination', loadChildren: () => import('./pages/destination/destination.module').then(m => m.DestinationModule) },
+  { path: 'destination', loadChildren: () => import('./pages/destinations/destination.module').then(m => m.DestinationModule) },
 
   { path: 'technology', loadChildren: () => import('./pages/technology/technology.module').then(m => m.TechnologyModule) }
 

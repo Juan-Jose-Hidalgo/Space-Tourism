@@ -1,13 +1,7 @@
 @use 'mixins' as mix;
-@use 'variables' as var;
 
-.home {
-    align-items: normal;
-    min-height: 100vh;
+.container {
     background-image: url('/assets/img/home/background-home-mobile.jpg');
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
 
     @media (min-width: 768px) {
         background-image: url('/assets/img/home/background-home-tablet.jpg');
@@ -18,119 +12,71 @@
     }
 }
 
-.main__container {
-    @include mix.flex-box(column, nowrap, space-around, center);
+.container__content {
     width: 90%;
-    min-height: calc(100vh - 6rem);
-    margin: 0 auto;
-    color: map-get($map: var.$colors-map, $key: "primary");
-    padding-top: 1rem;
+    grid-template-areas:
+        'title'
+        'h1'
+        'text'
+        'btn';
+    align-items: end;
+    gap: 0;
 
     @media (min-width: 768px) {
-        min-height: calc(100vh - 6.1875rem);
-        width: 60%;
-        padding-top: 3rem;
+        align-items: center;
     }
 
     @media (min-width:1440px) {
         width: 80%;
-        min-height: calc(100vh - 11.3125rem);
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        grid-template-areas:
+            'title btn'
+            'h1 btn'
+            'text btn';
     }
 }
 
-.main__text {
-    @include mix.flex-box(column, nowrap, space-between, center);
-    gap: 1rem;
-    text-align: center;
+.heading-5 {
+    grid-area: title;
+
+    @media (min-width: 768px) {
+        text-align: center;
+        align-self: end;
+    }
 
     @media (min-width:1440px) {
-        width: 30%;
-        align-items: flex-start;
         text-align: left;
     }
 }
 
-.main__h5,
-.main__h1 {
-    text-transform: uppercase;
-    font-weight: 400;
-}
-
-.main__circles {
-    position: relative;
-    width: 18.75rem;
-    height: 18.75rem;
-}
-
-.main__circle {
-    border-radius: 50%;
-    position: absolute;
-
-    @media (min-width: 768px) {
-        width: 22rem;
-        height: 22rem;
-    }
+.heading-1 {
+    grid-area: h1;
 
     @media (min-width:1440px) {
-        width: 26rem;
-        height: 26rem;
+        text-align: left;
     }
 }
 
-.main__circle--large {
-    background-color: map-get($map: var.$colors-map, $key: "primary");
-    opacity: 0;
-    width: 17rem;
-    height: 17rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all .5s ease;
-
-    @media (min-width: 768px) {
-        width: 22rem;
-        height: 22rem;
-    }
-
-    @media (min-width:1440px) {
-        width: 26rem;
-        height: 26rem;
-    }
-}
-
-.main__circle--hover {
-    opacity: 0.1;
-}
-
-.main__circle--small {
-    @include mix.flex-box(column, nowrap, center, center);
-    background-color: map-get($map: var.$colors-map, $key: "primary");
-    color: map-get($map: var.$colors-map, $key: "secondary");
-    font-family: map-get($map: var.$fonts-map, $key: "secondary");
-    font-size: 1.25rem;
-    line-height: 1.4375rem;
-    letter-spacing: 1.25px;
-    width: 9.375rem;
-    height: 9.375rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-transform: uppercase;
+.body-text {
+    grid-area: text;
 
     @media (min-width:768px) {
-        width: 15.125rem;
-        height: 15.125rem;
-        font-size: 2rem;
-        line-height: 2.3125rem;
-        letter-spacing: 2px;
+        width: 450px;
+        justify-self: center;
+        align-self: start;
     }
 
     @media (min-width:1440px) {
-        width: 17.125rem;
-        height: 17.125rem;
+        justify-self: start;
     }
+}
 
+.circles {
+    grid-area: btn;
+    justify-self: center;
+
+    @media (min-width:1440px){
+        align-self: end;
+        margin-bottom: 5rem;
+        justify-self: end;
+    }
 }

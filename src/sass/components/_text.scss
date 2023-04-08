@@ -1,0 +1,156 @@
+@use 'variables' as var;
+
+//* Texts
+
+.body-text {
+    color: map-get($map: var.$colors-map, $key: "accent");
+    font-family: map-get($map: var.$fonts-map, $key: "primary");
+    font-style: normal;
+    font-weight: 400;
+    font-size: .9375rem;
+    line-height: 1.5625rem;
+    text-align: center;
+
+    @media (min-width: 768px) {
+        font-size: 1rem;
+        line-height: 1.75rem;
+    }
+
+    @media (min-width:1440px) {
+        font-size: 1.125rem;
+        line-height: 2rem;
+        text-align: left;
+    }
+}
+
+.heading-1 {
+    color: map-get($map: var.$colors-map, $key: "primary");
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5rem;
+    line-height: 6.25rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+        font-size: 9.375rem;
+        line-height: 9.375rem;
+    }
+
+    @media (min-width:1440px) {
+        font-size: 9.375rem;
+        line-height: 10.75rem;
+    }
+}
+
+.heading-2 {
+    color: map-get($map: var.$colors-map, $key: "primary");
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 4rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+        font-size: 5rem;
+        line-height: 5.75rem;
+    }
+
+    @media (min-width: 1440px) {
+        font-size: 6.25rem;
+        line-height: 7.1875rem;
+        text-align: left;
+    }
+}
+
+.heading-3 {
+    color: map-get($map: var.$colors-map, $key: "primary");
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media (min-width:768px) {
+        font-size: 2.5rem;
+        line-height: 2.875rem;
+    }
+
+    @media (min-width: 1440px) {
+        font-size: 3.5rem;
+        line-height: 4rem;
+        text-align: left;
+    }
+}
+
+.heading-4 {
+    color: map-get($map: var.$colors-map, $key: "primary");
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.125rem;
+    text-align: center;
+    text-transform: uppercase;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+
+    @media (min-width:768px) {
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+    }
+
+    @media (min-width:1440px) {
+        font-size: 2rem;
+        line-height: 2.3125rem;
+        text-align: left;
+    }
+}
+
+.heading-5 {
+    color: map-get($map: var.$colors-map, $key: "accent");
+    font-family: map-get($map: var.$fonts-map, $key: "primary");
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.1875rem;
+    text-align: center;
+    letter-spacing: 2.7008px;
+    text-transform: uppercase;
+
+    @media (min-width:768px) {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        letter-spacing: .2109rem;
+        text-align: left;
+    }
+
+    @media (min-width:1440px) {
+        font-size: 1.75rem;
+        line-height: 2.125rem;
+        letter-spacing: .2953rem;
+    }
+}
+
+.subheading-1 {
+    color: map-get($map: var.$colors-map, $key: "primary");
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    font-size: 1.75rem;
+    line-height: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.subheading-2 {
+    color: map-get($map: var.$colors-map, $key: "accent");
+    font-family: map-get($map: var.$fonts-map, $key: "primary");
+    font-size: .875rem;
+    line-height: 1.0625rem;
+    text-align: center;
+    letter-spacing: 2.3632px;
+    text-transform: uppercase;
+}

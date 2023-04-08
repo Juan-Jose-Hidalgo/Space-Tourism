@@ -1,1 +1,34 @@
-<app-menu></app-menu>
+<div class="container">
+
+    <div class="container__content" (touchstart)="onTouchStart($event)" (touchmove)="onTouchMove($event)"
+        (touchend)="onTouchEnd()">
+
+        <!--* Title -->
+        <div class="container__title">
+            <h2 class="heading-5"><span class="container__span">02 </span> Meet your crew</h2>
+        </div>
+
+        <!--* Info -->
+        <app-crew-info [crew]="crew" [selectedIndex]="selectedIndex" class="crew__component"></app-crew-info>
+
+        <!--* Dots -->
+        <div class="dots">
+            <div class="dots__dot" *ngFor="let item of crew; let i = index"
+                [ngClass]="{'dots__dot--active': i === selectedIndex}" (click)="selectItem(i)"></div>
+        </div>
+
+        <!--* Image -->
+        <div class="crew__image carousel__fade" *ngFor="let item of crew; let i = index"
+            [ngClass]="{'crew__image--active': i === selectedIndex}">
+            <picture>
+                <source class="crew__img" [src]="item.image.webp" type="image/webp" accept="image/webp">
+                <img class="crew__img" [ngSrc]="item.image.png" fill alt="Crew member image">
+            </picture>
+
+        </div>
+
+
+    </div>
+
+
+</div>

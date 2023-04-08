@@ -1,0 +1,80 @@
+@use 'mixins' as mix;
+@use 'variables' as var;
+
+.container {
+    background-image: url('/assets/img/destination/background-destination-mobile.jpg');
+
+    @media (min-width: 48rem) {
+        background-image: url('/assets/img/destination/background-destination-tablet.jpg');
+    }
+
+    @media (min-width: 90rem) {
+        background-image: url('/assets/img/destination/background-destination-desktop.jpg');
+    }
+}
+
+.container__content {
+    width: 90%;
+    max-width: 118.75rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 10.625rem auto auto;
+    grid-template-areas:
+        'title'
+        'img'
+        'nav'
+        'destination';
+
+    @media (min-width:768px) {
+        grid-template-rows: auto 300px auto auto;
+    }
+
+    @media (min-width:1440px) {
+        width: 80%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas:
+            'title title'
+            'img nav'
+            'img destination';
+        gap: 0;
+        column-gap: 6rem;
+    }
+}
+
+.image {
+    display: none;
+}
+
+.image--active {
+    display: block;
+    position: relative;
+    grid-area: img;
+
+    @media (min-width: 1440px) {
+        height: 445px;
+        width: 445px;
+        justify-self: center;
+    }
+}
+
+.image__img {
+    object-fit: contain;
+}
+
+.destination__navigation {
+    grid-area: nav;
+    align-self: center;
+
+    @media (min-width:1440px) {
+        justify-self: start;
+    }
+}
+
+.destination__selected {
+    display: none;
+}
+
+.destination__selected--active {
+    display: block;
+    grid-area: destination;
+}

@@ -1,0 +1,109 @@
+@use 'mixins' as mix;
+@use 'variables' as var;
+
+.navigation {
+    width: 0%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(2.5484rem);
+    z-index: 1;
+    transition: all .5s ease;
+
+    @media (min-width: 768px) {
+        position: static;
+        width: 65%;
+        height: auto;
+        pointer-events: auto;
+    }
+
+    @media (min-width:1440px) {
+        width: 60%;
+        padding: 0 164px;
+    }
+}
+
+.navigation--active {
+    width: 60%;
+    pointer-events: auto;
+   
+}
+
+.navigation__ul {
+    @include mix.flex-box(column, nowrap, flex-start, flex-start);
+    height: 100%;
+    margin-top: 6rem;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+        @include mix.flex-box(row, wrap, space-around, center);
+        margin-top: 0;
+        gap: 0;
+    }
+}
+
+.navigation__li {
+    width: 100%;
+
+    @media (min-width: 768px) {
+        width: auto;
+    }
+}
+
+.navigation__a {
+    color: map-get($map: var.$colors-map, $key: "primary");
+    line-height: 1.1875rem;
+    letter-spacing: 2.7px;
+    text-transform: uppercase;
+    padding: .5rem 2rem;
+    border-right: .25rem solid transparent;
+    transition: all .3s ease;
+
+    &:hover {
+        border-right: .25rem solid rgba(255, 255, 255, .5);
+    }
+
+    @media (min-width: 768px) {
+        display: inline-block;
+        padding: 2.4375rem 0;
+        text-align: center;
+        font-size: .875rem;
+        line-height: 1.0625rem;
+        letter-spacing: 2.3625px;
+        border-right: none;
+        border-bottom: .25rem solid transparent;
+
+        &:hover {
+            border-right: none;
+            border-bottom: .25rem solid rgba(255, 255, 255, .5);
+        }
+    }
+
+    @media (min-width:1440px) {
+        font-size: 1rem;
+        line-height: 1.1875rem;
+        letter-spacing: 2.7px;
+    }
+}
+
+.navigation__a--active {
+    border-right: .25rem solid map-get($map: var.$colors-map, $key: "primary");
+
+    @media (min-width:768px) {
+        border-right: none;
+        border-bottom: .25rem solid map-get($map: var.$colors-map, $key: "primary");
+    }
+}
+
+.navigation__span {
+    font-weight: 700;
+    margin-right: .6875rem;
+
+    @media (min-width: 768px) and (max-width:1440px) {
+        display: none;
+    }
+}
