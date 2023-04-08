@@ -13,13 +13,13 @@
         </nav>
 
         <!--* Technology info -->
-        <div class="info" *ngFor="let tech of technologies; let i = index"
+        <div class="info carousel__fade" *ngFor="let tech of technologies; let i = index"
             [ngClass]="{'info--active': selectedIndex === i}">
             <app-tech-info [technology]="tech"></app-tech-info>
         </div>
 
         <!--* Techonology image -->
-        <div class="technology__image" *ngFor="let tech of technologies; let i = index"
+        <div class="technology__image carousel__fade" *ngFor="let tech of technologies; let i = index"
             [ngClass]="{'technology__image--active': selectedIndex === i}">
             <img *ngIf="landscape; else portrait" [ngSrc]="tech.image.landscape" fill alt="{{tech.title}}">
             <ng-template #portrait>
