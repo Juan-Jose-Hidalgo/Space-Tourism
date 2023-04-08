@@ -30,12 +30,6 @@
     grid-area: title;
 }
 
-.heading-2 {
-    @media (min-width:1440px) {
-        text-align: left;
-    }
-}
-
 .selected-destination__description {
     grid-area: desc;
 
@@ -50,13 +44,11 @@
     }
 }
 
-.selected-destination__p {
-    text-align: center;
+.body-text {
     min-height: 8.3125rem;
     border-bottom: 1px solid #383B4B;
 
     @media (min-width:1440px) {
-        text-align: justify;
         min-height: 150px;
         margin-bottom: 2rem;
     }

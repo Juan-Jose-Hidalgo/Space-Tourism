@@ -5,6 +5,7 @@
     @include mix.flex-box(column, wrap, center, center);
     gap: .5rem;
     text-transform: uppercase;
+    margin-bottom: 1rem;
 
     @media (min-width:1440px) {
         width: 100%;
@@ -29,6 +30,7 @@
 }
 
 .info__span {
+    font-family: map-get($map: var.$fonts-map, $key: "primary");
     font-weight: 400;
     font-size: .875rem;
     line-height: 1.0625rem;

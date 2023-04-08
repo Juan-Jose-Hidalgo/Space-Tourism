@@ -15,6 +15,7 @@
 }
 
 .destination-nav__btn {
+    color: map-get($map: var.$colors-map, $key: "primary");
     font-size: .875rem;
     line-height: 1.0625rem;
     letter-spacing: 2.3625px;

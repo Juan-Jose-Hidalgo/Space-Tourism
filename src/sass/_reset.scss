@@ -141,27 +141,3 @@ body {
     /* (Optional) */
     -moz-osx-font-smoothing: grayscale;
 }
-
-p,
-h5 {
-    font-family: map-get($map: var.$fonts-map, $key: "primary");
-}
-
-h1,
-h2,
-h3,
-h4 {
-    font-family: map-get($map: var.$fonts-map, $key: "secondary");
-}
-
-h2 {
-    font-size: 6.25rem;
-}
-
-h3 {
-    font-size: 3.5rem;
-}
-
-h4 {
-    font-size: 2rem;
-}
