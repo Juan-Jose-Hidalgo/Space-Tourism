@@ -9,7 +9,6 @@ import { Destination } from '../models/destination.interface';
 export class DestinationsService {
 
   private destinationsArray: Destination[] = [];
-  private destination!: Destination;
 
   constructor() { }
 
@@ -17,14 +16,6 @@ export class DestinationsService {
     return new Observable<Destination[]>(observer => {
       this.destinationsArray = [...destinations];
       observer.next(this.destinationsArray);
-    })
-  }
-
-  getDestination(name: string) {
-    return new Observable<Destination>(observer => {
-      const result = destinations.filter(destination => destination.name === name);
-      this.destination = result[0];
-      observer.next(this.destination);
     })
   }
 }

@@ -15,11 +15,11 @@
     </button>
 
     <!--* Menu -->
-    <nav class="header__nav" [ngClass]="{'header__nav--active' : menuActive}">
-        <ul class="header__ul">
-            <li class="header__li" *ngFor="let item of menu">
-                <a [routerLink]="item.url" routerLinkActive="header__a--active" class="header__a">
-                    <span class="header__span">{{item.span}} </span> {{item.title}}
+    <nav class="navigation" [ngClass]="{'navigation--active' : menuActive}">
+        <ul class="navigation__ul">
+            <li class="navigation__li" *ngFor="let item of menu">
+                <a [routerLink]="item.url" routerLinkActive="navigation__a--active" class="navigation__a">
+                    <span class="navigation__span">{{item.span}} </span> {{item.title}}
                 </a>
             </li>
         </ul>
