@@ -1,7 +1,7 @@
 @use "mixins" as mix;
 @use "variables" as var;
 
-.navigation__ul {
+.tech-nav__ul {
     display: flex;
     gap: 16px;
 
@@ -11,7 +11,7 @@
     }
 }
 
-.navigation__btn {
+.tech-nav__btn {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -45,11 +45,11 @@
     }
 }
 
-.navigation__btn--active {
+.tech-nav__btn--active {
     background-color: map-get($map: var.$colors-map, $key: "primary");
     color: map-get($map: var.$colors-map, $key: "secondary");
 }
 
-.navigation__span {
+.tech-nav__span {
     opacity: 1;
 }
